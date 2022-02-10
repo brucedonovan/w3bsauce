@@ -1,4 +1,3 @@
 # w3bsauce 
 
-
-![1545428723](https://user-images.githubusercontent.com/5603206/153455918-adc0241c-b03f-4a66-94ca-cc4592b35c75.svg)
+<img src="https://user-images.githubusercontent.com/5603206/153457878-d118e6a7-d3e3-4110-9d7f-341fdffeb135.png" alt="drawing" width="100"/>
