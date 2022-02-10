@@ -1,0 +1,19 @@
+{
+  "name": "@w3bsauce/react",
+  "version": "1.0.0",
+  "main": "./bin/index.js",
+  "repository": "https://github.com/w3bsauce/react.git",
+  "author": "brucedonovan",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "dependencies": {
+    "@w3bsauce/core": "1.0.0",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39"
+  }
+}

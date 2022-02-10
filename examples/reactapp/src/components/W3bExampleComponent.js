@@ -1,0 +1,55 @@
+import React, { useEffect } from "react";
+
+import { W3bContext } from "@w3bsauce/react";
+import { ConnectionId } from "@w3bsauce/core/bin/types";
+import metamask from "@w3bsauce/metamask";
+
+import walletconnect from "@w3bsauce/walletconnect";
+
+import settings from "../w3bsauce.config";
+
+const W3bExampleComponent = () => {
+  const { w3bState, w3bFunctions } = React.useContext(W3bContext);
+
+  // example of using a w3bSauce config file.
+  useEffect(() => {
+    w3bFunctions.updateConfig(settings);
+  }, []); //only do this once on load
+
+  // console.log errors ( and diagnostics if set)
+  useEffect(() => {
+    w3bState.diagnostics && console.log(w3bState.diagnostics);
+    w3bState.error && console.log(w3bState.error);
+  }, [w3bState.diagnostics, w3bState.error]);
+
+  return (
+    <div align="left">
+      {w3bState.active !== undefined ? (
+        <p>Account Connected : {w3bState.accounts[0]} </p>
+      ) : (
+        <p> No Wallet connected </p>
+      )}
+      <div>
+        <button
+          onClick={() => w3bFunctions.connect(metamask)}
+          disabled={w3bState.active === ConnectionId.metamask}
+        >
+          Connect to metamask
+        </button>
+
+        {w3bState.active === ConnectionId.walletconnect ? (
+          <button onClick={() => walletconnect.provider.disconnect()}>
+            Disconnect from walletconnect
+          </button>
+        ) : (
+          <button onClick={() => w3bFunctions.connect(walletconnect)}>
+            Connect to WalletConnect
+          </button>
+        )}
+      </div>
+      <p> Connected to : {w3bState.active}</p>
+    </div>
+  );
+};
+
+export { W3bExampleComponent };

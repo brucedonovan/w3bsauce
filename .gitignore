@@ -1,0 +1,16 @@
+/node_modules/
+/.vscode/
+/build/
+/lib/
+
+/docs/
+/masterbin/
+
+/dist/
+
+
+.DS_Store
+coverage
+*.log
+
+.yarn/*

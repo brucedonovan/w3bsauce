@@ -1,0 +1,20 @@
+{
+  "name": "@w3bsauce/core",
+  "version": "1.0.0",
+  "main": "./bin/index.js",
+  "description": "",
+  "repository": "https://github.com/w3bsauce/core.git",
+  "author": "brucedonovan <bruce.donovan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "dependencies": {
+    "ethers": "^5.5.3",
+    "rxjs": "^7.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.15"
+  }
+}

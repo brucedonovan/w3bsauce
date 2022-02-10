@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>w3bsauce</title>
+    <script defer src="dist/browser.js"></script>
+  </head>
+
+  <body>
+    <h1>W3b Connect</h1>
+    <div>
+      <a href="https://eips.ethereum.org/EIPS/eip-1193" target="_blank">
+        EIP-1193</a
+      >
+    </div>
+    <div>
+      <button
+        onclick="window.providerFunctions.isMetaMask()"
+        id="connectedButton"
+        disabled
+      >
+        Is Metamask?
+      </button>
+    </div>
+    <div id="noteDiv"></div>
+
+    <div id="activeWalletDiv">Is wallet connected? ????</div>
+
+    <div>
+      <button
+        onclick="window.providerFunctions.switchEthereumChain('0x64')"
+        id="connectedButton"
+      >
+        Request network change
+      </button>
+    </div>
+
+    <div>
+      <button onclick="window.connect('metamask')">connect metamask</button>
+    </div>
+
+    <div id="connectedDiv"></div>
+
+    <div id="connectingDiv"></div>
+  </body>
+</html>

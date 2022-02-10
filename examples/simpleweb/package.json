@@ -1,0 +1,16 @@
+{
+  "name": "simpleWeb",
+  "packageManager": "yarn@3.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node esbuild.config.js -w"
+  },
+  "dependencies": {
+    "@w3bsauce/core": "1.0.0",
+    "@w3bsauce/metamask": "1.0.0"
+  },
+  "devDependencies": {
+    "esbuild-serve": "^1.0.1"
+  }
+}
