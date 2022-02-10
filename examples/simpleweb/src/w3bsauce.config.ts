@@ -9,6 +9,8 @@ const settings: W3bConfig = {
   supportedNetworks: [1, 4],
   customNetworkProvider: undefined,
   showDiagnostics: false,
+
+  reloadOnNetworkChange:false,
   
   defaultConnection: metamask,
   autoConnect: true,
