@@ -12,14 +12,14 @@ const walletConnectProvider = new WalletConnectProvider({
   qrcode: true,
 });
 
-const enable: () => Promise<any> = walletConnectProvider.enable;
+const activate: () => Promise<any> = walletConnectProvider.activate;
 const disconnect: () => Promise<any> = walletConnectProvider.disconnect;
 
 const provider: ProviderModule = {
   provider: walletConnectProvider as unknown as EIP1193Provider,
   connectionId,
   providerFunctionMap: new Map([
-    ["enable",enable],
+    ["activate" ,activate],
     ["disconnect", ()=>disconnect()],
   ])
 };

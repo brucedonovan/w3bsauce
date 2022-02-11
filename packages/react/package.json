@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "watch" : " tsc -b -w"
   },
   "dependencies": {
     "@w3bsauce/core": "1.0.0",

@@ -10,7 +10,8 @@
     "build": "lerna run build",
     "prestart": "yarn build",
     "prepack": "yarn build",
-    "compile": "lerna run compile"
+    "compile": "lerna run compile",
+    "startdev" : "lerna run watch"
   },
   "dependencies": {
     "@w3bsauce/core": "1.0.0",

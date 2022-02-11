@@ -97,8 +97,8 @@ w3bFunctions.updateConfig( { useEip1193Bridge:false } as W3bConfig);
 const selectedProviderModule: ProviderModule = metamask;
 
 // EXAMPLE: Add all w3bfunctions and customProviderFunctions to the global window state
-(window as W3bFunctions).connect = () =>
-  w3bFunctions.connect(selectedProviderModule);
+(window as W3bFunctions).activate = () =>
+  w3bFunctions.activate(selectedProviderModule);
 w3bObservables.providerFunctions.subscribe((fns: any) => {
   window.providerFunctions = { ...fns };
 });

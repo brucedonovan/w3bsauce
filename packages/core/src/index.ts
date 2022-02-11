@@ -12,9 +12,7 @@ import {
   filter,
 } from "rxjs";
 
-import { addAllEventListeners, requestAccounts } from "./eip1193Common";
 
-import { mapToErrorHandledObject } from "./utils";
 import {
   W3bConfig,
   ConnectionId,
@@ -26,8 +24,11 @@ import {
 } from "./types";
 import { ProviderRpcError, EIP1193Provider } from "./types/eip1193";
 
+import { handleActivate } from "./w3bHelpers";
+import { addAllEventListeners, requestAccounts } from "./eip1193Common";
+import { mapToErrorHandledObject } from "./utils";
+
 import defaultConfig from "./w3bsauce.config";
-import { config } from "process";
 
 const supportedConnections: ConnectionId[] = [
   ConnectionId.metamask,
@@ -49,7 +50,7 @@ config$
     first() // only once at the beginning if the above is true (ie. not on every config change)
   )
   .subscribe((_config: W3bConfig) => {
-    connect(_config.defaultConnection!, undefined, undefined);
+    activate(_config.defaultConnection!, undefined, undefined);
   });
 
 const chainId$: Subject<number> = new Subject();
@@ -142,7 +143,7 @@ const networkProvider = combineLatest([
       // case: Matching to selected chainId failed! ( eg. when infura doesn't support a particular network )>>
       if (_provider) {
         diagnostics$.next(
-          `ChainId ${_chainId} unsupported by networkProvider: Using *provider* as networkProvider`
+          `Chain Id ${_chainId} unsupported by networkProvider: Using *provider* as networkProvider`
         );
         return _provider; // use the provider
       } else {
@@ -159,41 +160,8 @@ const networkProvider = combineLatest([
   share()
 );
 
-// steps for handling connect()
-const _handleConnectAction = async (_c: ProviderModule) => {
-  // set activating connection
-  activating$.next(_c.connectionId);
 
-  const customEnableFunction = _c.providerFunctionMap.get("enable");
-
-  if (customEnableFunction) {
-    // if there is a custom enable function use it:
-    customEnableFunction()
-      .then((_acc: string[]) => _handleEnableSuccess(_acc))
-      .catch((err) => _handleEnableError(err));
-  } else {
-    // request the accounts from EIP1193Proivder:
-    requestAccounts(_c.provider, (_acc: string[]) =>
-      _handleEnableSuccess(_acc)
-    );
-  }
-  const _handleEnableSuccess = (_acc: string[]) => {
-    // return of any accounts.length signifies success ( therefore set connection as active)
-    if (_acc.length) {
-      accounts$.next(_acc);
-      connection$.next(_c);
-      active$.next(_c.connectionId);
-      activating$.next(undefined);
-    }
-  };
-  const _handleEnableError = (err: ProviderRpcError) => {
-    error$.next(err);
-    activating$.next(undefined);
-  };
-};
-
-
-const connect = (
+const activate = (
   _provider: ProviderModule | EIP1193Provider,
   _id: string | undefined = undefined,
   _providerFns: Map<string, any> | undefined
@@ -209,7 +177,7 @@ const connect = (
     (_provider as EIP1193Provider).request !== undefined; // TODO fix this loose check
 
   // Case: _connection is a recognised ConnectionId
-  if (isProviderModule) _handleConnectAction(_provider as ProviderModule);
+  if (isProviderModule) handleActivate(_provider as ProviderModule);
 
   // Case: _connection is a EIPPRovider ( ie. not a recognised ConnectionId  )
   if (isCustomEIP1193Provider) {
@@ -222,7 +190,7 @@ const connect = (
         ? mapToErrorHandledObject(_providerFns, error$) // handle RPC errors from custom function map
         : undefined,
     };
-    _handleConnectAction(customConnector);
+    handleActivate(customConnector);
   }
 
   // Case: neither EIP1193 provider nor recognised ConnectionId
@@ -245,7 +213,7 @@ const w3bObservables: W3bObservables = {
 };
 
 const w3bFunctions: W3bFunctions = {
-  connect,
+  activate,
   updateConfig,
 };
 
@@ -257,6 +225,7 @@ const _w3bSubjects: W3bSubjects = {
   active$,
   activating$,
   config$,
+  connection$
 };
 
 export { w3bObservables, w3bFunctions, _w3bSubjects };

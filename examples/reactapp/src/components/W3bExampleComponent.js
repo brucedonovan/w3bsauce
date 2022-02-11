@@ -31,7 +31,7 @@ const W3bExampleComponent = () => {
       )}
       <div>
         <button
-          onClick={() => w3bFunctions.connect(metamask)}
+          onClick={() => w3bFunctions.activate(metamask)}
           disabled={w3bState.active === ConnectionId.metamask}
         >
           Connect to metamask
@@ -42,7 +42,7 @@ const W3bExampleComponent = () => {
             Disconnect from walletconnect
           </button>
         ) : (
-          <button onClick={() => w3bFunctions.connect(walletconnect)}>
+          <button onClick={() => w3bFunctions.activate(walletconnect)}>
             Connect to WalletConnect
           </button>
         )}

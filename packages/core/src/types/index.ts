@@ -24,7 +24,7 @@ export interface W3bObservables {
 }
 
 export interface W3bFunctions {
-  connect: (
+  activate: (
     connection: ProviderModule | EIP1193Provider,
     id?: string,
     providerFunctionMap?: Map<string, AsyncFunction>
@@ -39,7 +39,8 @@ export interface W3bSubjects {
   error$: Subject<ProviderRpcError>;
   active$: Subject<ConnectionId | undefined>;
   activating$: Subject<ConnectionId | undefined>;
-  config$: Subject<any>;
+  connection$: Subject<ProviderModule>;
+  config$: Subject<W3bConfig>;
 }
 
 export interface W3bState {
