@@ -24,7 +24,7 @@
   },
   "workspaces": [
     "packages/*",
-    "examples/*",
-    "W3bConnectors/*"
+    "connectors/*",
+    "examples/*"
   ]
 }

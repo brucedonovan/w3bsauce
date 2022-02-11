@@ -1,8 +1,8 @@
-import { W3bConnectorId, W3bConnector } from "@w3bsauce/core/bin/types";
+import {W3bConnector, W3bConnectorId} from '@w3bsauce/core/bin/types';
 
 declare const window: any;
 const ethereum = window.ethereum;
-const W3bConnectorId = W3bConnectorId.metamask;
+const connectorId = W3bConnectorId.metamask;
 
 const isMetaMask = ethereum.isMetaMask;
 
@@ -28,7 +28,7 @@ const activate = () => ethereum.request({ method: "eth_requestAccounts", params:
 
 const provider: W3bConnector = {
   provider: ethereum,
-  W3bConnectorId,
+  connectorId,
   providerFunctionMap: new Map([
     ["activate", activate ],
     ["isMetaMask", isMetaMask],
