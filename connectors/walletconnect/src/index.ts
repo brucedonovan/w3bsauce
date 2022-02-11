@@ -1,5 +1,5 @@
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { ConnectionId, ProviderModule } from "@w3bsauce/core/bin/types";
+import { ConnectionId, Connector } from "@w3bsauce/core/bin/types";
 import { EIP1193Provider } from "@w3bsauce/core/bin/types/eip1193";
 
 import { _w3bSubjects } from "@w3bsauce/core";
@@ -17,7 +17,7 @@ const walletConnectProvider = new WalletConnectProvider({
 const activate: () => Promise<any> = walletConnectProvider.enable;
 const disconnect: () => Promise<any> = walletConnectProvider.disconnect;
 
-const provider: ProviderModule = {
+const provider: Connector = {
   provider: walletConnectProvider as unknown as EIP1193Provider,
   connectionId,
   providerFunctionMap: new Map([
@@ -26,4 +26,4 @@ const provider: ProviderModule = {
   ]),
 };
 
-export default provider as ProviderModule;
+export default provider as Connector;

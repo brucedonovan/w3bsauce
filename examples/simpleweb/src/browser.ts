@@ -5,7 +5,7 @@ import metamask from "@w3bsauce/metamask";
 
 // import walletconnect from "@w3bsauce/walletconnect";
 
-import type { ProviderModule, W3bConfig, W3bFunctions } from "@w3bsauce/core/bin/types";
+import type { Connector, W3bConfig, W3bFunctions } from "@w3bsauce/core/bin/types";
 
 import settings from './w3bsauce.config';
 
@@ -93,12 +93,12 @@ w3bFunctions.updateConfig( settings );
 // EXAMPLE change ONE config setting the w3bconfig: 
 w3bFunctions.updateConfig( { useEip1193Bridge:false } as W3bConfig);
 
-// EXAMPLE setting the ProviderModule to Metamask package (imported up top):
-const selectedProviderModule: ProviderModule = metamask;
+// EXAMPLE setting the Connector to Metamask package (imported up top):
+const selectedConnector: Connector = metamask;
 
 // EXAMPLE: Add all w3bfunctions and customProviderFunctions to the global window state
 (window as W3bFunctions).activate = () =>
-  w3bFunctions.activate(selectedProviderModule);
+  w3bFunctions.activate(selectedConnector);
 w3bObservables.providerFunctions.subscribe((fns: any) => {
   window.providerFunctions = { ...fns };
 });

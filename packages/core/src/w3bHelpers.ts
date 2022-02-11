@@ -8,7 +8,7 @@ import {
 import { addAllEventListeners, requestAccounts } from "./eip1193Common";
 
 import { _w3bSubjects } from ".";
-import { ProviderModule } from "./types";
+import { Connector } from "./types";
 
 /**
  * 
@@ -16,7 +16,7 @@ import { ProviderModule } from "./types";
  * @param _c Provider module
  *
  */
-export const handleActivate = async (_c: ProviderModule) => {
+export const handleActivate = async (_c: Connector) => {
   
   // set activating connection
   _w3bSubjects.activating$.next(_c.connectionId);

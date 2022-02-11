@@ -5,10 +5,11 @@ import { EIP1193Provider, ProviderRpcError } from "./eip1193";
 
 export type AsyncFunction = (...args: any) => Promise<any>;
 
-export interface ProviderModule {
+export interface Connector {
   provider: EIP1193Provider;
   connectionId: ConnectionId;
   providerFunctionMap: Map<string, AsyncFunction>;
+  providerSettings?: any;
 }
 
 export interface W3bObservables {
@@ -25,7 +26,7 @@ export interface W3bObservables {
 
 export interface W3bFunctions {
   activate: (
-    connection: ProviderModule | EIP1193Provider,
+    connection: Connector | EIP1193Provider,
     id?: string,
     providerFunctionMap?: Map<string, AsyncFunction>
   ) => void;
@@ -39,7 +40,7 @@ export interface W3bSubjects {
   error$: Subject<ProviderRpcError>;
   active$: Subject<ConnectionId | undefined>;
   activating$: Subject<ConnectionId | undefined>;
-  connection$: Subject<ProviderModule>;
+  connection$: Subject<Connector>;
   config$: Subject<W3bConfig>;
 }
 
@@ -67,7 +68,7 @@ export interface W3bConfig {
   defaultNetwork: Networkish;
   supportedNetworks: Networkish[];
   
-  defaultConnection: ProviderModule | undefined;
+  defaultConnection: Connector | undefined;
   autoConnect: boolean;
 
   customNetworkProvider: ethers.providers.BaseProvider | undefined; // EIP1193 provider

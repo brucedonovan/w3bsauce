@@ -1,4 +1,4 @@
-import { ConnectionId, ProviderModule } from "@w3bsauce/core/bin/types";
+import { ConnectionId, Connector } from "@w3bsauce/core/bin/types";
 
 declare const window: any;
 const ethereum = window.ethereum;
@@ -26,7 +26,7 @@ const watchAsset = (assetAddress: string) =>
 
 const activate = () => ethereum.request({ method: "eth_requestAccounts", params: [] })
 
-const provider: ProviderModule = {
+const provider: Connector = {
   provider: ethereum,
   connectionId,
   providerFunctionMap: new Map([
@@ -51,4 +51,4 @@ const provider: ProviderModule = {
 /* Mobile Specific RPC Methods */
 // wallet_scanQRCode
 
-export default provider as ProviderModule;
+export default provider as Connector;

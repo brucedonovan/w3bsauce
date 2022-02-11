@@ -15,7 +15,7 @@ import {
 import {
   W3bConfig,
   ConnectionId,
-  ProviderModule,
+  Connector,
   W3bObservables,
   W3bFunctions,
   W3bSubjects,
@@ -87,7 +87,7 @@ const activating: Observable<ConnectionId | undefined> = activating$.pipe(
   share()
 );
 
-const connection$: Subject<ProviderModule> = new Subject();
+const connection$: Subject<Connector> = new Subject();
 
 const networkConnection$: Subject<ethers.providers.BaseProvider | undefined> =
   new Subject();
@@ -159,14 +159,14 @@ const networkProvider = combineLatest([
 );
 
 const activate = (
-  _provider: ProviderModule | EIP1193Provider,
+  _provider: Connector | EIP1193Provider,
   _id: string | undefined = undefined,
   _providerFns: Map<string, any> | undefined
 ) => {
 
   // check Provider has required
-  const isProviderModule = supportedConnections.includes(
-    (_provider as ProviderModule).connectionId
+  const isConnector = supportedConnections.includes(
+    (_provider as Connector).connectionId
   );
 
   // check if a customEIP1193 is provided:
@@ -174,13 +174,13 @@ const activate = (
     (_provider as EIP1193Provider).request !== undefined; // TODO fix this loose check
 
   // Case: _connection is a recognised ConnectionId
-  if (isProviderModule) handleActivate(_provider as ProviderModule);
+  if (isConnector) handleActivate(_provider as Connector);
 
   // Case: _connection is a EIPPRovider ( ie. not a recognised ConnectionId  )
   if (isCustomEIP1193Provider) {
-    console.log("building providerModule");
-    // build custom EIP1193 providerModule from the custom EIP1193
-    const customConnector: ProviderModule = {
+    console.log("building Connector");
+    // build custom EIP1193 Connector from the custom EIP1193
+    const customConnector: Connector = {
       provider: _provider as EIP1193Provider,
       connectionId: _id as ConnectionId,
       providerFunctionMap: _providerFns?.size
@@ -191,7 +191,7 @@ const activate = (
   }
 
   // Case: neither EIP1193 provider nor recognised ConnectionId
-  if (!isProviderModule && !isCustomEIP1193Provider)
+  if (!isConnector && !isCustomEIP1193Provider)
     console.log(
       "Connection not supported! Check that connection module/package is installed, or try to use a generic EIP1193Provider"
     );

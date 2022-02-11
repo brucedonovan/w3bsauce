@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "compile": "tsc -b",
-    "watch" : " tsc -b -w"
+    "watch" : "tsc -b -w"
   },
   "dependencies": {
     "ethers": "^5.5.3",
