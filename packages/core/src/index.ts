@@ -12,12 +12,10 @@ import {
   filter,
 } from "rxjs";
 
-
 import {
   W3bConfig,
   ConnectionId,
   ProviderModule,
-  AsyncFunction,
   W3bObservables,
   W3bFunctions,
   W3bSubjects,
@@ -40,7 +38,7 @@ const updateConfig = (config: W3bConfig) => {
   config$.next({ ...defaultConfig, ...config });
 };
 
-/* handle auto connect  on first load */
+/* handle auto connect on first load */
 config$
   .pipe(
     filter(
@@ -159,7 +157,6 @@ const networkProvider = combineLatest([
   }),
   share()
 );
-
 
 const activate = (
   _provider: ProviderModule | EIP1193Provider,

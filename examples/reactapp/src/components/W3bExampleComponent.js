@@ -11,12 +11,12 @@ import settings from "../w3bsauce.config";
 const W3bExampleComponent = () => {
   const { w3bState, w3bFunctions } = React.useContext(W3bContext);
 
-  // example of using a w3bSauce config file.
+  // Example of using a w3bSauce config file.
   useEffect(() => {
     w3bFunctions.updateConfig(settings);
   }, []); //only do this once on load
 
-  // console.log errors ( and diagnostics if set)
+  // Console.log errors ( and diagnostics if set)
   useEffect(() => {
     w3bState.diagnostics && console.log(w3bState.diagnostics);
     w3bState.error && console.log(w3bState.error);
@@ -32,7 +32,7 @@ const W3bExampleComponent = () => {
       <div>
         <button
           onClick={() => w3bFunctions.activate(metamask)}
-          disabled={w3bState.active === ConnectionId.metamask}
+          disabled= { (w3bState.active === ConnectionId.metamask ||  w3bState.activating === ConnectionId.metamask) }
         >
           Connect to metamask
         </button>
@@ -47,7 +47,10 @@ const W3bExampleComponent = () => {
           </button>
         )}
       </div>
-      <p> Connected to : {w3bState.active}</p>
+
+      { w3bState.active && <p> Connected to : {w3bState.active}</p> }
+      { w3bState.activating && <p> Connecting to {w3bState.activating}: Please check your wallet. </p> }
+
     </div>
   );
 };

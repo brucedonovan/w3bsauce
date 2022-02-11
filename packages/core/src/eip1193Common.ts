@@ -10,7 +10,7 @@ import { _w3bSubjects } from ".";
 /**
  * generic EIP1193 connection
  * */
-export const requestAccounts = async (
+export const requestAccounts = (
   connection: EIP1193Provider,
   callback: (x: any) => void = () => null
 ) => {

@@ -24,10 +24,13 @@ const watchAsset = (assetAddress: string) =>
     params: [{ address: assetAddress }], // chainId must be in hexadecimal numbers
   });
 
+const activate = () => ethereum.request({ method: "eth_requestAccounts", params: [] })
+
 const provider: ProviderModule = {
   provider: ethereum,
   connectionId,
   providerFunctionMap: new Map([
+    ["activate", activate ],
     ["isMetaMask", isMetaMask],
     ["switchEthereumChain", switchEthereumChain],
     ["addEthereumChain", addEthereumChain],

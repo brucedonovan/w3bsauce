@@ -17,23 +17,24 @@ import { ProviderModule } from "./types";
  *
  */
 export const handleActivate = async (_c: ProviderModule) => {
+  
   // set activating connection
   _w3bSubjects.activating$.next(_c.connectionId);
 
-  console.log(_c)
   // Custom Activate or gerneic eth_requestAccounts
   const customActivateFunction = _c.providerFunctionMap.get("activate");
   if (customActivateFunction) {
     // if there is a custom function use it:
     customActivateFunction()
       .then((_acc: string[]) => _handleActivateSuccess(_acc))
-      .catch((err) => _handleActivateError(err));
+      .catch((err:any) => _handleActivateError(err));
   } else {
     // request the accounts from EIP1193Proivder:
     requestAccounts(_c.provider, (_acc: string[]) =>
       _handleActivateSuccess(_acc)
     );
   }
+
   const _handleActivateSuccess = (_acc: string[]) => {
     // return of any accounts.length signifies success ( therefore set connection as active)
     if (_acc.length) {
