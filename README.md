@@ -1,2 +1,2 @@
 # W3b Sauce monorepo
-<img src="https://user-images.githubusercontent.com/5603206/153613805-0e8508cf-9ec1-4f1b-9a03-1601b74b55af.gif" width="100%" />
+<img src="https://user-images.githubusercontent.com/5603206/153614570-2a6f817c-fe12-4c14-b9d3-a79c170485ab.gif" width="100%" />
