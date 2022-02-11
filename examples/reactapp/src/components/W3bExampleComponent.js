@@ -23,7 +23,18 @@ const W3bExampleComponent = () => {
   }, [w3bState.diagnostics, w3bState.error]);
 
   return (
-    <div align="left">
+    <div
+      align="left"
+      style={{
+        backgroundImage: `url("https://user-images.githubusercontent.com/5603206/153614570-2a6f817c-fe12-4c14-b9d3-a79c170485ab.gif")`,
+        height: '500px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100%',
+        overflow:'auto'
+      }}
+    >
+      {/* <img src="https://user-images.githubusercontent.com/5603206/153614570-2a6f817c-fe12-4c14-b9d3-a79c170485ab.gif" width="100%" alt='w3bSauce' /> */}
+
       {w3bState.active !== undefined ? (
         <p>Account Connected : {w3bState.accounts[0]} </p>
       ) : (
@@ -32,7 +43,10 @@ const W3bExampleComponent = () => {
       <div>
         <button
           onClick={() => w3bFunctions.activate(metamask)}
-          disabled= { (w3bState.active === ConnectionId.metamask ||  w3bState.activating === ConnectionId.metamask) }
+          disabled={
+            w3bState.active === ConnectionId.metamask ||
+            w3bState.activating === ConnectionId.metamask
+          }
         >
           Connect to metamask
         </button>
@@ -48,9 +62,10 @@ const W3bExampleComponent = () => {
         )}
       </div>
 
-      { w3bState.active && <p> Connected to : {w3bState.active}</p> }
-      { w3bState.activating && <p> Connecting to {w3bState.activating}: Please check your wallet. </p> }
-
+      {w3bState.active && <p> Connected to : {w3bState.active}</p>}
+      {w3bState.activating && (
+        <p> Connecting to {w3bState.activating}: Please check your wallet. </p>
+      )}
     </div>
   );
 };

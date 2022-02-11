@@ -21,9 +21,7 @@ function App() {
           Learn React
         </a>
       </header>
-
       <W3bExampleComponent />
-
     </div>
   );
 }
