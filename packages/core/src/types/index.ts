@@ -5,9 +5,9 @@ import { EIP1193Provider, ProviderRpcError } from "./eip1193";
 
 export type AsyncFunction = (...args: any) => Promise<any>;
 
-export interface Connector {
+export interface W3bConnector {
   provider: EIP1193Provider;
-  connectionId: ConnectionId;
+  W3bConnectorId: W3bConnectorId;
   providerFunctionMap: Map<string, AsyncFunction>;
   providerSettings?: any;
 }
@@ -19,14 +19,14 @@ export interface W3bObservables {
   accounts: Observable<string[]>;
   error: Observable<ProviderRpcError>;
   diagnostics: Observable<string>;
-  active: Observable<ConnectionId | undefined>;
-  activating: Observable<ConnectionId | undefined>;
+  active: Observable<W3bConnectorId | undefined>;
+  activating: Observable<W3bConnectorId | undefined>;
   providerFunctions: Observable<any>;
 }
 
 export interface W3bFunctions {
   activate: (
-    connection: Connector | EIP1193Provider,
+    connection: W3bConnector | EIP1193Provider,
     id?: string,
     providerFunctionMap?: Map<string, AsyncFunction>
   ) => void;
@@ -38,9 +38,9 @@ export interface W3bSubjects {
   chainId$: Subject<number>;
   accounts$: BehaviorSubject<string[]>;
   error$: Subject<ProviderRpcError>;
-  active$: Subject<ConnectionId | undefined>;
-  activating$: Subject<ConnectionId | undefined>;
-  connection$: Subject<Connector>;
+  active$: Subject<W3bConnectorId | undefined>;
+  activating$: Subject<W3bConnectorId | undefined>;
+  connection$: Subject<W3bConnector>;
   config$: Subject<W3bConfig>;
 }
 
@@ -49,13 +49,13 @@ export interface W3bState {
   networkProvider: ethers.providers.BaseProvider | undefined;
   chainId: number | undefined;
   accounts: string[];
-  active: ConnectionId | undefined;
-  activating: ConnectionId | undefined;
+  active: W3bConnectorId | undefined;
+  activating: W3bConnectorId | undefined;
   error: ProviderRpcError | undefined;
   diagnostics: string | undefined;
 }
 
-export enum ConnectionId {
+export enum W3bConnectorId {
   "metamask" = "metamask",
   "walletconnect" = "walletconnect",
 }
@@ -68,7 +68,7 @@ export interface W3bConfig {
   defaultNetwork: Networkish;
   supportedNetworks: Networkish[];
   
-  defaultConnection: Connector | undefined;
+  defaultConnection: W3bConnector | undefined;
   autoConnect: boolean;
 
   customNetworkProvider: ethers.providers.BaseProvider | undefined; // EIP1193 provider

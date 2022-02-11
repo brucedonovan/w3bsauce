@@ -5,7 +5,7 @@ import metamask from "@w3bsauce/metamask";
 
 // import walletconnect from "@w3bsauce/walletconnect";
 
-import type { Connector, W3bConfig, W3bFunctions } from "@w3bsauce/core/bin/types";
+import type { W3bConnector, W3bConfig, W3bFunctions } from "@w3bsauce/core/bin/types";
 
 import settings from './w3bsauce.config';
 
@@ -28,11 +28,11 @@ w3bObservables.chainId.subscribe((_chainId: number | undefined) =>
 w3bObservables.accounts.subscribe((_accounts: string[]) =>
   console.log("accounts are: ", _accounts)
 );
-w3bObservables.active.subscribe((_connectionId: string | undefined) =>
-  console.log("active: ", _connectionId)
+w3bObservables.active.subscribe((_W3bConnectorId: string | undefined) =>
+  console.log("active: ", _W3bConnectorId)
 );
-w3bObservables.activating.subscribe((_connectionId: string | undefined) =>
-  console.log("activating: ", _connectionId)
+w3bObservables.activating.subscribe((_W3bConnectorId: string | undefined) =>
+  console.log("activating: ", _W3bConnectorId)
 );
 
 // handling networkProvider change example
@@ -93,12 +93,12 @@ w3bFunctions.updateConfig( settings );
 // EXAMPLE change ONE config setting the w3bconfig: 
 w3bFunctions.updateConfig( { useEip1193Bridge:false } as W3bConfig);
 
-// EXAMPLE setting the Connector to Metamask package (imported up top):
-const selectedConnector: Connector = metamask;
+// EXAMPLE setting the W3bConnector to Metamask package (imported up top):
+const selectedW3bConnector: W3bConnector = metamask;
 
 // EXAMPLE: Add all w3bfunctions and customProviderFunctions to the global window state
 (window as W3bFunctions).activate = () =>
-  w3bFunctions.activate(selectedConnector);
+  w3bFunctions.activate(selectedW3bConnector);
 w3bObservables.providerFunctions.subscribe((fns: any) => {
   window.providerFunctions = { ...fns };
 });

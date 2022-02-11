@@ -14,8 +14,8 @@ import {
 
 import {
   W3bConfig,
-  ConnectionId,
-  Connector,
+  W3bConnectorId,
+  W3bConnector,
   W3bObservables,
   W3bFunctions,
   W3bSubjects,
@@ -28,9 +28,9 @@ import { mapToErrorHandledObject } from "./utils";
 
 import defaultConfig from "./w3bsauce.config";
 
-const supportedConnections: ConnectionId[] = [
-  ConnectionId.metamask,
-  ConnectionId.walletconnect,
+const supportedConnections: W3bConnectorId[] = [
+  W3bConnectorId.metamask,
+  W3bConnectorId.walletconnect,
 ];
 
 const config$: BehaviorSubject<W3bConfig> = new BehaviorSubject(defaultConfig);
@@ -79,15 +79,15 @@ const diagnostics: Observable<string> = combineLatest([
   share()
 );
 
-const active$: Subject<ConnectionId | undefined> = new Subject();
-const active: Observable<ConnectionId | undefined> = active$.pipe(share());
+const active$: Subject<W3bConnectorId | undefined> = new Subject();
+const active: Observable<W3bConnectorId | undefined> = active$.pipe(share());
 
-const activating$: Subject<ConnectionId | undefined> = new Subject();
-const activating: Observable<ConnectionId | undefined> = activating$.pipe(
+const activating$: Subject<W3bConnectorId | undefined> = new Subject();
+const activating: Observable<W3bConnectorId | undefined> = activating$.pipe(
   share()
 );
 
-const connection$: Subject<Connector> = new Subject();
+const connection$: Subject<W3bConnector> = new Subject();
 
 const networkConnection$: Subject<ethers.providers.BaseProvider | undefined> =
   new Subject();
@@ -159,39 +159,39 @@ const networkProvider = combineLatest([
 );
 
 const activate = (
-  _provider: Connector | EIP1193Provider,
+  _provider: W3bConnector | EIP1193Provider,
   _id: string | undefined = undefined,
   _providerFns: Map<string, any> | undefined
 ) => {
 
   // check Provider has required
-  const isConnector = supportedConnections.includes(
-    (_provider as Connector).connectionId
+  const isW3bConnector = supportedConnections.includes(
+    (_provider as W3bConnector).W3bConnectorId
   );
 
   // check if a customEIP1193 is provided:
   const isCustomEIP1193Provider =
     (_provider as EIP1193Provider).request !== undefined; // TODO fix this loose check
 
-  // Case: _connection is a recognised ConnectionId
-  if (isConnector) handleActivate(_provider as Connector);
+  // Case: _connection is a recognised W3bConnectorId
+  if (isW3bConnector) handleActivate(_provider as W3bConnector);
 
-  // Case: _connection is a EIPPRovider ( ie. not a recognised ConnectionId  )
+  // Case: _connection is a EIPPRovider ( ie. not a recognised W3bConnectorId  )
   if (isCustomEIP1193Provider) {
-    console.log("building Connector");
-    // build custom EIP1193 Connector from the custom EIP1193
-    const customConnector: Connector = {
+    console.log("building W3bConnector");
+    // build custom EIP1193 W3bConnector from the custom EIP1193
+    const customW3bConnector: W3bConnector = {
       provider: _provider as EIP1193Provider,
-      connectionId: _id as ConnectionId,
+      W3bConnectorId: _id as W3bConnectorId,
       providerFunctionMap: _providerFns?.size
         ? mapToErrorHandledObject(_providerFns, error$) // handle RPC errors from custom function map
         : undefined,
     };
-    handleActivate(customConnector);
+    handleActivate(customW3bConnector);
   }
 
-  // Case: neither EIP1193 provider nor recognised ConnectionId
-  if (!isConnector && !isCustomEIP1193Provider)
+  // Case: neither EIP1193 provider nor recognised W3bConnectorId
+  if (!isW3bConnector && !isCustomEIP1193Provider)
     console.log(
       "Connection not supported! Check that connection module/package is installed, or try to use a generic EIP1193Provider"
     );

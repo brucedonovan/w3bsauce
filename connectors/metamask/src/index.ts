@@ -1,8 +1,8 @@
-import { ConnectionId, Connector } from "@w3bsauce/core/bin/types";
+import { W3bConnectorId, W3bConnector } from "@w3bsauce/core/bin/types";
 
 declare const window: any;
 const ethereum = window.ethereum;
-const connectionId = ConnectionId.metamask;
+const W3bConnectorId = W3bConnectorId.metamask;
 
 const isMetaMask = ethereum.isMetaMask;
 
@@ -26,9 +26,9 @@ const watchAsset = (assetAddress: string) =>
 
 const activate = () => ethereum.request({ method: "eth_requestAccounts", params: [] })
 
-const provider: Connector = {
+const provider: W3bConnector = {
   provider: ethereum,
-  connectionId,
+  W3bConnectorId,
   providerFunctionMap: new Map([
     ["activate", activate ],
     ["isMetaMask", isMetaMask],
@@ -51,4 +51,4 @@ const provider: Connector = {
 /* Mobile Specific RPC Methods */
 // wallet_scanQRCode
 
-export default provider as Connector;
+export default provider as W3bConnector;

@@ -8,7 +8,7 @@ import {
 import { addAllEventListeners, requestAccounts } from "./eip1193Common";
 
 import { _w3bSubjects } from ".";
-import { Connector } from "./types";
+import { W3bConnector } from "./types";
 
 /**
  * 
@@ -16,10 +16,10 @@ import { Connector } from "./types";
  * @param _c Provider module
  *
  */
-export const handleActivate = async (_c: Connector) => {
+export const handleActivate = async (_c: W3bConnector) => {
   
   // set activating connection
-  _w3bSubjects.activating$.next(_c.connectionId);
+  _w3bSubjects.activating$.next(_c.W3bConnectorId);
 
   // Custom Activate or gerneic eth_requestAccounts
   const customActivateFunction = _c.providerFunctionMap.get("activate");
@@ -40,7 +40,7 @@ export const handleActivate = async (_c: Connector) => {
     if (_acc.length) {
       _w3bSubjects.accounts$.next(_acc);
       _w3bSubjects.connection$.next(_c);
-      _w3bSubjects.active$.next(_c.connectionId);
+      _w3bSubjects.active$.next(_c.W3bConnectorId);
       _w3bSubjects.activating$.next(undefined);
     }
   };

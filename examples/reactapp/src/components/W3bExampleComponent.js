@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { W3bContext } from "@w3bsauce/react";
-import { ConnectionId } from "@w3bsauce/core/bin/types";
+import { W3bConnectorId } from "@w3bsauce/core/bin/types";
 import metamask from "@w3bsauce/metamask";
 
 import walletconnect from "@w3bsauce/walletconnect";
@@ -44,14 +44,14 @@ const W3bExampleComponent = () => {
         <button
           onClick={() => w3bFunctions.activate(metamask)}
           disabled={
-            w3bState.active === ConnectionId.metamask ||
-            w3bState.activating === ConnectionId.metamask
+            w3bState.active === W3bConnectorId.metamask ||
+            w3bState.activating === W3bConnectorId.metamask
           }
         >
           Connect to metamask
         </button>
 
-        {w3bState.active === ConnectionId.walletconnect ? (
+        {w3bState.active === W3bConnectorId.walletconnect ? (
           <button onClick={() => walletconnect.provider.disconnect()}>
             Disconnect from walletconnect
           </button>
