@@ -19,8 +19,8 @@ const provider: ProviderModule = {
   provider: walletConnectProvider as unknown as EIP1193Provider,
   connectionId,
   providerFunctionMap: new Map([
-    ["activate" ,activate],
-    ["disconnect", ()=>disconnect()],
+    ["activate", activate],
+    ["disconnect", disconnect],
   ])
 };
 

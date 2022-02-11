@@ -20,6 +20,7 @@ export const handleActivate = async (_c: ProviderModule) => {
   // set activating connection
   _w3bSubjects.activating$.next(_c.connectionId);
 
+  console.log(_c)
   // Custom Activate or gerneic eth_requestAccounts
   const customActivateFunction = _c.providerFunctionMap.get("activate");
   if (customActivateFunction) {
