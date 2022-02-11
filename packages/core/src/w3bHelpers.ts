@@ -19,7 +19,7 @@ import { W3bConnector } from "./types";
 export const handleActivate = async (_c: W3bConnector) => {
   
   // set activating connection
-  _w3bSubjects.activating$.next(_c.W3bConnectorId);
+  _w3bSubjects.activating$.next(_c.connectorId);
 
   // Custom Activate or gerneic eth_requestAccounts
   const customActivateFunction = _c.providerFunctionMap.get("activate");
@@ -40,7 +40,7 @@ export const handleActivate = async (_c: W3bConnector) => {
     if (_acc.length) {
       _w3bSubjects.accounts$.next(_acc);
       _w3bSubjects.connection$.next(_c);
-      _w3bSubjects.active$.next(_c.W3bConnectorId);
+      _w3bSubjects.active$.next(_c.connectorId);
       _w3bSubjects.activating$.next(undefined);
     }
   };

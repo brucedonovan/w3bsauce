@@ -7,7 +7,7 @@ export type AsyncFunction = (...args: any) => Promise<any>;
 
 export interface W3bConnector {
   provider: EIP1193Provider;
-  W3bConnectorId: W3bConnectorId;
+  connectorId: W3bConnectorId;
   providerFunctionMap: Map<string, AsyncFunction>;
   providerSettings?: any;
 }

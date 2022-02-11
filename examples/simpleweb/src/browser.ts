@@ -28,11 +28,11 @@ w3bObservables.chainId.subscribe((_chainId: number | undefined) =>
 w3bObservables.accounts.subscribe((_accounts: string[]) =>
   console.log("accounts are: ", _accounts)
 );
-w3bObservables.active.subscribe((_W3bConnectorId: string | undefined) =>
-  console.log("active: ", _W3bConnectorId)
+w3bObservables.active.subscribe((_connectorId: string | undefined) =>
+  console.log("active: ", _connectorId)
 );
-w3bObservables.activating.subscribe((_W3bConnectorId: string | undefined) =>
-  console.log("activating: ", _W3bConnectorId)
+w3bObservables.activating.subscribe((_connectorId: string | undefined) =>
+  console.log("activating: ", _connectorId)
 );
 
 // handling networkProvider change example

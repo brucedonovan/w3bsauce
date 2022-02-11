@@ -166,7 +166,7 @@ const activate = (
 
   // check Provider has required
   const isW3bConnector = supportedConnections.includes(
-    (_provider as W3bConnector).W3bConnectorId
+    (_provider as W3bConnector).connectorId
   );
 
   // check if a customEIP1193 is provided:
@@ -182,7 +182,7 @@ const activate = (
     // build custom EIP1193 W3bConnector from the custom EIP1193
     const customW3bConnector: W3bConnector = {
       provider: _provider as EIP1193Provider,
-      W3bConnectorId: _id as W3bConnectorId,
+      connectorId: _id as W3bConnectorId,
       providerFunctionMap: _providerFns?.size
         ? mapToErrorHandledObject(_providerFns, error$) // handle RPC errors from custom function map
         : undefined,
