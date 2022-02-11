@@ -12,7 +12,7 @@ const walletConnectProvider = new WalletConnectProvider({
   qrcode: true,
 });
 
-const activate: () => Promise<any> = walletConnectProvider.activate;
+const activate: () => Promise<any> = walletConnectProvider.enable;
 const disconnect: () => Promise<any> = walletConnectProvider.disconnect;
 
 const provider: ProviderModule = {
