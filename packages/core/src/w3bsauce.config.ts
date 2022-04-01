@@ -2,9 +2,10 @@ import { W3bConfig } from "./types";
 
 export default {
   inactiveConnectionListener: true, // listen the window.ethereum events even if not connected.
-  suppressNetworkConnection: false, // no fallback network
+  
+  suppressNetworkConnection: false, // disable fallback network connection
+  
   useEip1193Bridge: false,
-
   reloadOnNetworkChange: true,
 
   showDiagnostics: true,

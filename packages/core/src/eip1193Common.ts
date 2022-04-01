@@ -30,7 +30,7 @@ const _handleAccountsChanged = (accounts: string[]) => {
   // Handle the new accounts, or lack thereof, [].
   _w3bSubjects.accounts$.next(accounts);
   _w3bSubjects.diagnostics$.next(`Account changed: ${accounts}`);
-  if (accounts.length === 0)_w3bSubjects.activeConnector$.next(undefined); // set active to undefined if no account
+  if (accounts.length === 0) _w3bSubjects.activeConnector$.next(undefined); // set active to undefined if no account
 };
 
 const _handleChainChanged = (chainId: string) => {
@@ -50,6 +50,7 @@ const _handleMessage = (message: ProviderMessage) => {
   );
 };
 
+
 const _handleConnect = (connectInfo: ProviderConnectInfo) => {
   _w3bSubjects.diagnostics$.next(`New connection: ${connectInfo.chainId}`);
 };
@@ -62,7 +63,7 @@ const _handleDisconnect = (error: ProviderRpcError) => {
     : _w3bSubjects.diagnostics$.next(
         `Connection closed: ( error > ${error.message} code>${error.code} )`
       );
-      _w3bSubjects.activeConnector$.next(undefined);
+  _w3bSubjects.activeConnector$.next(undefined);
 };
 
 /**

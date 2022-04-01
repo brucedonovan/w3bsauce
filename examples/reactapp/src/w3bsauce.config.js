@@ -1,5 +1,4 @@
 import metamask from "@w3bsauce/metamask";
-import walletconnect from "@w3bsauce/walletconnect";
 
 const settings = {
   inactiveConnectionListener: true, // listen the window.ethereum events even if not connected.

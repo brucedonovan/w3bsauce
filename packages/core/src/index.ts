@@ -38,14 +38,16 @@ const updateConfig = (config: W3bConfig) => {
   config$.next({ ...defaultConfig, ...config });
 };
 
-/* handle auto connect on first load */
+/* Handle auto connect on first load */
 config$
   .pipe(
     filter(
       (_config: W3bConfig) =>
+        // if config file has a default connection and 'auto-connect is true:
         _config.autoConnect && _config.defaultConnection !== undefined
     ),
-    first() // only once at the beginning if the above is true (ie. not on every config change)
+    // only once at the beginning if the above is true (ie. not on every config change):
+    first()
   )
   .subscribe((_config: W3bConfig) => {
     activate(_config.defaultConnection!, undefined, undefined);
@@ -80,20 +82,20 @@ const diagnostics: Observable<string> = combineLatest([
 );
 
 const activeConnector$: Subject<W3bConnectorId | undefined> = new Subject();
-const activeConnector: Observable<W3bConnectorId | undefined> = activeConnector$.pipe(share());
+const activeConnector: Observable<W3bConnectorId | undefined> =
+  activeConnector$.pipe(share());
 
 const activatingConnector$: Subject<W3bConnectorId | undefined> = new Subject();
-const activatingConnector: Observable<W3bConnectorId | undefined> = activatingConnector$.pipe(
-  share()
-);
+const activatingConnector: Observable<W3bConnectorId | undefined> =
+  activatingConnector$.pipe(share());
+
 
 const connection$: Subject<W3bConnector> = new Subject();
-
 const networkConnection$: Subject<ethers.providers.BaseProvider | undefined> =
   new Subject();
 networkConnection$.next(undefined);
 
-// Set the provider and appropriate listeners()
+// Set the provider and appropriate listeners():
 const provider = connection$.pipe(
   map((_connection) => {
     // 1. Activate the Eip1193 Listeners for the connection
@@ -122,7 +124,7 @@ const customNetworkProvider: Observable<BaseProvider | undefined> =
 // Set the networkProvider ( note: networkProvider should never be *undefined* )
 // 1. Set to same network when window.ethereum.chainId/provider.chainId changes.
 // 2. Set to provider (primary connection) if the particular chainId/network is unsupported by the defaultNetworkprovider.
-// 3. Set to defaultNetwork chainId as a last resort
+// 3. Set to defaultNetwork chainId as the last resort
 const networkProvider = combineLatest([
   chainId,
   provider,
@@ -158,12 +160,13 @@ const networkProvider = combineLatest([
   share()
 );
 
+
+
 const activate = (
   _provider: W3bConnector | EIP1193Provider,
   _id: string | undefined = undefined,
   _providerFns: Map<string, any> | undefined
 ) => {
-
   // check Provider has required
   const isW3bConnector = supportedConnections.includes(
     (_provider as W3bConnector).connectorId
@@ -209,11 +212,6 @@ const w3bObservables: W3bObservables = {
   providerFunctions, // note: this is an observable with all the available/custom provider functions
 };
 
-const w3bFunctions: W3bFunctions = {
-  activate,
-  updateConfig,
-};
-
 const _w3bSubjects: W3bSubjects = {
   chainId$,
   accounts$,
@@ -222,7 +220,12 @@ const _w3bSubjects: W3bSubjects = {
   activeConnector$,
   activatingConnector$,
   config$,
-  connection$
+  connection$,
+};
+
+const w3bFunctions: W3bFunctions = {
+  activate,
+  updateConfig,
 };
 
 export { w3bObservables, w3bFunctions, _w3bSubjects };

@@ -16,7 +16,6 @@ const W3bExampleComponent = () => {
     w3bFunctions.updateConfig(settings);
   }, []); //only do this once on load
 
-  // Console.log errors ( and diagnostics if set)
   useEffect(() => {
     w3bState.diagnostics && console.log(w3bState.diagnostics);
     w3bState.error && console.log(w3bState.error);
@@ -42,7 +41,7 @@ const W3bExampleComponent = () => {
       )}
       <div>
         <button
-          onClick={() => w3bFunctions.activate(metamask)}
+          onClick={() => { console.log(metamask) ; w3bFunctions.activate(metamask) }}
           disabled={
             w3bState.active === W3bConnectorId.metamask ||
             w3bState.activating === W3bConnectorId.metamask
