@@ -28,10 +28,10 @@ w3bObservables.chainId.subscribe((_chainId: number | undefined) =>
 w3bObservables.accounts.subscribe((_accounts: string[]) =>
   console.log("accounts are: ", _accounts)
 );
-w3bObservables.active.subscribe((_connectorId: string | undefined) =>
+w3bObservables.activeConnector.subscribe((_connectorId: string | undefined) =>
   console.log("active: ", _connectorId)
 );
-w3bObservables.activating.subscribe((_connectorId: string | undefined) =>
+w3bObservables.activatingConnector.subscribe((_connectorId: string | undefined) =>
   console.log("activating: ", _connectorId)
 );
 
@@ -64,7 +64,7 @@ w3bObservables.diagnostics.subscribe((x: string) => {
 });
 
 // EXAMPLE: Handling an active connection
-w3bObservables.active?.subscribe((x) => {
+w3bObservables.activeConnector?.subscribe((x) => {
   if (x) {
     console.log("CONNECTED:", x);
     document.getElementById("connectedButton")!.removeAttribute("disabled");
@@ -82,10 +82,9 @@ w3bObservables.active?.subscribe((x) => {
 });
 
 // EXAMPLE: Handling activating connection!
-w3bObservables.activating?.subscribe((x) => {
+w3bObservables.activatingConnector?.subscribe((x) => {
   x && console.log("CONNECTING TO.....", x);
 });
-
 
 
 // EXMAPLE use config in an external file:
