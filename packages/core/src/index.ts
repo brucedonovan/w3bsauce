@@ -58,7 +58,7 @@ const accounts$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 const accounts: Observable<string[]> = accounts$.pipe(
   map((_addrs) => {
     if (_addrs.length === 0) {
-      active$.next(undefined);
+      activeConnector$.next(undefined);
     }
     return _addrs;
   }),
@@ -79,11 +79,11 @@ const diagnostics: Observable<string> = combineLatest([
   share()
 );
 
-const active$: Subject<W3bConnectorId | undefined> = new Subject();
-const active: Observable<W3bConnectorId | undefined> = active$.pipe(share());
+const activeConnector$: Subject<W3bConnectorId | undefined> = new Subject();
+const activeConnector: Observable<W3bConnectorId | undefined> = activeConnector$.pipe(share());
 
-const activating$: Subject<W3bConnectorId | undefined> = new Subject();
-const activating: Observable<W3bConnectorId | undefined> = activating$.pipe(
+const activatingConnector$: Subject<W3bConnectorId | undefined> = new Subject();
+const activatingConnector: Observable<W3bConnectorId | undefined> = activatingConnector$.pipe(
   share()
 );
 
@@ -204,8 +204,8 @@ const w3bObservables: W3bObservables = {
   provider, // deps: chainId, connection
   error, // deps : zero
   diagnostics, // deps: zero
-  activating, // the eip1193 that is connecting (if different from the active connection) - deps: active
-  active, // the active eip1193 connection (NB!! only if accounts.length ) - deps: accounts
+  activatingConnector, // the eip1193 that is connecting (if different from the active connection) - deps: active
+  activeConnector, // the active eip1193 connection (NB!! only if accounts.length ) - deps: accounts
   providerFunctions, // note: this is an observable with all the available/custom provider functions
 };
 
@@ -219,8 +219,8 @@ const _w3bSubjects: W3bSubjects = {
   accounts$,
   error$,
   diagnostics$,
-  active$,
-  activating$,
+  activeConnector$,
+  activatingConnector$,
   config$,
   connection$
 };

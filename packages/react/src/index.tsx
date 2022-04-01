@@ -21,8 +21,8 @@ export const useObservable = (observable:  Observable<any>) => {
 const W3bProvider = ({ children }: any) => {
 
   const accounts = useObservable( w3bObservables.accounts)[0];
-  const active = useObservable( w3bObservables.active)[0];
-  const activating = useObservable( w3bObservables.activating)[0];
+  const activeConnector = useObservable( w3bObservables.activeConnector)[0];
+  const activatingConnector = useObservable( w3bObservables.activatingConnector)[0];
   const provider = useObservable( w3bObservables.provider)[0];
   const networkProvider = useObservable( w3bObservables.networkProvider)[0];
   const chainId= useObservable( w3bObservables.chainId)[0];
@@ -31,8 +31,8 @@ const W3bProvider = ({ children }: any) => {
 
   const w3bState: W3bState = { 
     accounts: accounts || [],
-    active, 
-    activating,
+    activeConnector, 
+    activatingConnector,
     provider,
     networkProvider,
     chainId,

@@ -12,17 +12,6 @@ export interface W3bConnector {
   providerSettings?: any;
 }
 
-export interface W3bObservables {
-  chainId: Observable<number>;
-  provider: Observable<ethers.providers.Web3Provider>;
-  networkProvider: Observable<ethers.providers.BaseProvider>;
-  accounts: Observable<string[]>;
-  error: Observable<ProviderRpcError>;
-  diagnostics: Observable<string>;
-  active: Observable<W3bConnectorId | undefined>;
-  activating: Observable<W3bConnectorId | undefined>;
-  providerFunctions: Observable<any>;
-}
 
 export interface W3bFunctions {
   activate: (
@@ -33,13 +22,25 @@ export interface W3bFunctions {
   updateConfig: (config: W3bConfig) => void;
 }
 
+export interface W3bObservables {
+  chainId: Observable<number>;
+  provider: Observable<ethers.providers.Web3Provider>;
+  networkProvider: Observable<ethers.providers.BaseProvider>;
+  accounts: Observable<string[]>;
+  error: Observable<ProviderRpcError>;
+  diagnostics: Observable<string>;
+  activeConnector: Observable<W3bConnectorId | undefined>;
+  activatingConnector: Observable<W3bConnectorId | undefined>;
+  providerFunctions: Observable<any>;
+}
+
 export interface W3bSubjects {
   diagnostics$: Subject<string>;
   chainId$: Subject<number>;
   accounts$: BehaviorSubject<string[]>;
   error$: Subject<ProviderRpcError>;
-  active$: Subject<W3bConnectorId | undefined>;
-  activating$: Subject<W3bConnectorId | undefined>;
+  activeConnector$: Subject<W3bConnectorId | undefined>;
+  activatingConnector$: Subject<W3bConnectorId | undefined>;
   connection$: Subject<W3bConnector>;
   config$: Subject<W3bConfig>;
 }
@@ -49,8 +50,8 @@ export interface W3bState {
   networkProvider: ethers.providers.BaseProvider | undefined;
   chainId: number | undefined;
   accounts: string[];
-  active: W3bConnectorId | undefined;
-  activating: W3bConnectorId | undefined;
+  activeConnector: W3bConnectorId | undefined;
+  activatingConnector: W3bConnectorId | undefined;
   error: ProviderRpcError | undefined;
   diagnostics: string | undefined;
 }

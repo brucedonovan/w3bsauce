@@ -19,7 +19,7 @@ export const requestAccounts = (
     .then((x: any) => callback(x))
     .catch((e) => {
       _w3bSubjects.error$.next(e as ProviderRpcError);
-      _w3bSubjects.activating$.next(undefined);
+      _w3bSubjects.activatingConnector$.next(undefined);
     });
 };
 
@@ -30,7 +30,7 @@ const _handleAccountsChanged = (accounts: string[]) => {
   // Handle the new accounts, or lack thereof, [].
   _w3bSubjects.accounts$.next(accounts);
   _w3bSubjects.diagnostics$.next(`Account changed: ${accounts}`);
-  if (accounts.length === 0)_w3bSubjects.active$.next(undefined); // set active to undefined if no account
+  if (accounts.length === 0)_w3bSubjects.activeConnector$.next(undefined); // set active to undefined if no account
 };
 
 const _handleChainChanged = (chainId: string) => {
@@ -62,7 +62,7 @@ const _handleDisconnect = (error: ProviderRpcError) => {
     : _w3bSubjects.diagnostics$.next(
         `Connection closed: ( error > ${error.message} code>${error.code} )`
       );
-      _w3bSubjects.active$.next(undefined);
+      _w3bSubjects.activeConnector$.next(undefined);
 };
 
 /**

@@ -28,8 +28,8 @@ export var useObservable = function (observable) {
 var W3bProvider = function (_a) {
     var children = _a.children;
     var accounts = useObservable(w3bObservables.accounts)[0];
-    var active = useObservable(w3bObservables.active)[0];
-    var activating = useObservable(w3bObservables.activating)[0];
+    var activeConnector = useObservable(w3bObservables.activeConnector)[0];
+    var activatingConnector = useObservable(w3bObservables.activatingConnector)[0];
     var provider = useObservable(w3bObservables.provider)[0];
     var networkProvider = useObservable(w3bObservables.networkProvider)[0];
     var chainId = useObservable(w3bObservables.chainId)[0];
@@ -37,8 +37,8 @@ var W3bProvider = function (_a) {
     var diagnostics = useObservable(w3bObservables.diagnostics)[0];
     var w3bState = {
         accounts: accounts || [],
-        active: active,
-        activating: activating,
+        activeConnector: activeConnector,
+        activatingConnector: activatingConnector,
         provider: provider,
         networkProvider: networkProvider,
         chainId: chainId,

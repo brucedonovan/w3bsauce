@@ -1,4 +1,4 @@
-import {W3bConnector, W3bConnectorId} from '@w3bsauce/core/bin/types';
+import { W3bConnector, W3bConnectorId } from '@w3bsauce/core/bin/types';
 
 declare const window: any;
 const ethereum = window.ethereum;
