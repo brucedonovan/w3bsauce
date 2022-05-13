@@ -9,7 +9,7 @@ import walletconnect from "@w3bsauce/walletconnect";
 import settings from "../w3bsauce.config";
 
 const W3bExampleComponent = () => {
-  const { w3bState, w3bFunctions } = React.useContext(W3bContext);
+  const { w3bState , w3bFunctions } = React.useContext(W3bContext);
 
   // Example of using a w3bSauce config file.
   useEffect(() => {
@@ -34,7 +34,7 @@ const W3bExampleComponent = () => {
     >
       {/* <img src="https://user-images.githubusercontent.com/5603206/153614570-2a6f817c-fe12-4c14-b9d3-a79c170485ab.gif" width="100%" alt='w3bSauce' /> */}
 
-      {w3bState.active !== undefined ? (
+      {w3bState.activeConnector !== undefined ? (
         <p>Account Connected : {w3bState.accounts[0]} </p>
       ) : (
         <p> No Wallet connected </p>
@@ -43,14 +43,14 @@ const W3bExampleComponent = () => {
         <button
           onClick={() => { console.log(metamask) ; w3bFunctions.activate(metamask) }}
           disabled={
-            w3bState.active === W3bConnectorId.metamask ||
-            w3bState.activating === W3bConnectorId.metamask
+            w3bState.activeConnector === W3bConnectorId.metamask ||
+            w3bState.activatingConnector === W3bConnectorId.metamask
           }
         >
           Connect to metamask
         </button>
 
-        {w3bState.active === W3bConnectorId.walletconnect ? (
+        {w3bState.activeConnector === W3bConnectorId.walletconnect ? (
           <button onClick={() => walletconnect.provider.disconnect()}>
             Disconnect from walletconnect
           </button>
@@ -61,9 +61,9 @@ const W3bExampleComponent = () => {
         )}
       </div>
 
-      {w3bState.active && <p> Connected to : {w3bState.active}</p>}
-      {w3bState.activating && (
-        <p> Connecting to {w3bState.activating}: Please check your wallet. </p>
+      {w3bState.activeConnector && <p> Connected to : {w3bState.activeConnector}</p>}
+      {w3bState.activatingConnecotr && (
+        <p> Connecting to {w3bState.activatingConnector}: Please check your wallet. </p>
       )}
     </div>
   );
