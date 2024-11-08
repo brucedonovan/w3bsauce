@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import { jsx as _jsx } from "react/jsx-runtime";
 import React, { useEffect } from "react";
 import { w3bObservables, w3bFunctions } from "@w3bsauce/core";
@@ -45,7 +34,7 @@ var W3bProvider = function (_a) {
         error: error,
         diagnostics: diagnostics
     };
-    return (_jsx(W3bContext.Provider, __assign({ value: { w3bState: w3bState, w3bFunctions: w3bFunctions } }, { children: children }), void 0));
+    return (_jsx(W3bContext.Provider, { value: { w3bState: w3bState, w3bFunctions: w3bFunctions }, children: children }));
 };
 /* Returns the Context, Provider (and raw Observables?) */
 export { W3bContext, W3bProvider };

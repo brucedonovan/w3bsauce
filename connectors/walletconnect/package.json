@@ -5,8 +5,8 @@
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc -b",
-    "watch": "tsc -b -w"
+    "compile": "npx tsc -b",
+    "watch": "npx tsc -b -w"
   },
   "author": "Bruce Donovan",
   "license": "MIT",

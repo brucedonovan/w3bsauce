@@ -1,30 +1,23 @@
 {
   "name": "w3bsauce",
-  "packageManager": "yarn@3.1.1",
-  "private": true,
+  "packageManager": "yarn@4.5.1",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean --yes",
+    "dev": "npx lerna run dev --stream",
+    "clean": "npx lerna clean --yes",
     "lint": "yarn run eslint --ext .ts,.tsx .",
     "test": "jest",
-    "build": "lerna run build",
+    "build": "npx lerna run build",
     "prestart": "yarn build",
     "prepack": "yarn build",
-    "compile": "lerna run compile",
-    "startdev" : "lerna run watch"
-  },
-  "dependencies": {
-    "@w3bsauce/core": "1.0.0",
-    "@w3bsauce/metamask": "1.0.0",
-    "@w3bsauce/react": "1.0.0"
-  },
-  "devDependencies": {
-    "lerna": "^4.0.0",
-    "esbuild-serve": "^1.0.1"
+    "compile": "npx lerna run compile",
+    "startdev": "npx lerna run watch"
   },
   "workspaces": [
     "packages/*",
     "connectors/*",
     "examples/*"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^8.1.9"
+  }
 }

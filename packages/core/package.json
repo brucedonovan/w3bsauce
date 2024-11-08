@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "tsc -b",
-    "watch" : "tsc -b -w"
+    "compile": "npx tsc -b",
+    "watch": "npx tsc -b -w"
   },
   "dependencies": {
     "ethers": "^5.5.3",

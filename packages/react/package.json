@@ -7,12 +7,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "tsc -b",
-    "watch" : " tsc -b -w"
+    "compile": "npx tsc -b",
+    "watch": "npx tsc -b -w"
   },
   "dependencies": {
-    "@w3bsauce/core": "1.0.0",
-    "react": "^17.0.2"
+    "@w3bsauce/core": "../core",
+    "react": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.39"

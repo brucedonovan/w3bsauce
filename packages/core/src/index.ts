@@ -161,7 +161,6 @@ const networkProvider = combineLatest([
 );
 
 
-
 const activate = (
   _provider: W3bConnector | EIP1193Provider,
   _id: string | undefined = undefined,

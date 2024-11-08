@@ -1,6 +1,5 @@
 {
   "name": "simpleWeb",
-  "packageManager": "yarn@3.1.1",
   "private": true,
   "type": "module",
   "scripts": {
