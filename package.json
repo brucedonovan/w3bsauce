@@ -2,14 +2,17 @@
   "name": "w3bsauce",
   "packageManager": "yarn@4.5.1",
   "scripts": {
-    "dev": "npx lerna run dev --stream",
+
     "clean": "npx lerna clean --yes",
+    "repair": "npx lerna repair",
+
     "lint": "yarn run eslint --ext .ts,.tsx .",
-    "test": "jest",
-    "build": "npx lerna run build",
-    "prestart": "yarn build",
-    "prepack": "yarn build",
+
     "compile": "npx lerna run compile",
+    "build": "npx lerna run build",
+    "build+compile": "npx lerna run build,compile",
+
+    "dev": "npx lerna run dev --stream",
     "startdev": "npx lerna run watch"
   },
   "workspaces": [

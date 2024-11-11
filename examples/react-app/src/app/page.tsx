@@ -1,3 +1,4 @@
+import { W3bExampleComponent } from "@/components/W3bExampleComponent";
 import Image from "next/image";
 
 export default function Home() {

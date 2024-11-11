@@ -1,3 +1,4 @@
+"use client";
 import { jsx as _jsx } from "react/jsx-runtime";
 import React, { useEffect } from "react";
 import { w3bObservables, w3bFunctions } from "@w3bsauce/core";

@@ -6,8 +6,8 @@
     "start": "node esbuild.config.js -w"
   },
   "dependencies": {
-    "@w3bsauce/core": "1.0.0",
-    "@w3bsauce/metamask": "1.0.0"
+    "@w3bsauce/core": "../../packages/core",
+    "@w3bsauce/metamask": "../../connectors/metamask"
   },
   "devDependencies": {
     "esbuild-serve": "^1.0.1"

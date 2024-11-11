@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { Observable } from 'rxjs';
 import { w3bObservables, w3bFunctions, _w3bSubjects } from "@w3bsauce/core";

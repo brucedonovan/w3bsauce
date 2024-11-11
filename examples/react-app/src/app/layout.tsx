@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import { W3bExampleComponent } from "../components/W3bExampleComponent";
-
 import { W3bProvider } from "@w3bsauce/react";
 
 const geistSans = localFont({
@@ -33,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <W3bProvider>
-          <W3bExampleComponent />
+          <div className="h-screen">
+            <W3bExampleComponent />
+          </div>
           {children}
         </W3bProvider>
       </body>

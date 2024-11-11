@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
-
 import { W3bContext } from "@w3bsauce/react";
 import { W3bConnectorId } from "@w3bsauce/core/bin/types";
 import metamask from "@w3bsauce/metamask";
@@ -19,8 +18,8 @@ const W3bExampleComponent = () => {
   }, []); //only do this once on load
 
   useEffect(() => {
-    w3bState.diagnostics && console.log(w3bState.diagnostics);
-    w3bState.error && console.log(w3bState.error);
+    w3bState.diagnostics ? console.log(w3bState.diagnostics): console.log('diagnostic ok') ;
+    w3bState.error ? console.log(w3bState.error): console.log('no errors') ;
   }, [w3bState.diagnostics, w3bState.error]);
 
   return (

@@ -1,6 +1,5 @@
 {
   "name": "@w3bsauce/metamask",
-  "version": "1.0.0",
   "description": "Metamask W3bConnector",
   "main": "./bin/index.js",
   "dependencies": {
