@@ -2623,73 +2623,73 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@w3bsauce/core@file:../../packages/core::locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D485182%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=2049f8&locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D485182%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app"
+"@w3bsauce/core@file:../../packages/core::locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D4c44b3%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app":
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=bc926e&locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D4c44b3%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
-"@w3bsauce/core@file:../../packages/core::locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D485182%26locator%3DsimpleWeb%2540workspace%253Aexamples%252Fsimple-web":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=2049f8&locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D485182%26locator%3DsimpleWeb%2540workspace%253Aexamples%252Fsimple-web"
+"@w3bsauce/core@file:../../packages/core::locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D4c44b3%26locator%3DsimpleWeb%2540workspace%253Aexamples%252Fsimple-web":
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=bc926e&locator=%40w3bsauce%2Fmetamask%40file%3A..%2F..%2Fconnectors%2Fmetamask%23..%2F..%2Fconnectors%2Fmetamask%3A%3Ahash%3D4c44b3%26locator%3DsimpleWeb%2540workspace%253Aexamples%252Fsimple-web"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
 "@w3bsauce/core@file:../../packages/core::locator=%40w3bsauce%2Fmetamask%40workspace%3Aconnectors%2Fmetamask":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=2049f8&locator=%40w3bsauce%2Fmetamask%40workspace%3Aconnectors%2Fmetamask"
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=bc926e&locator=%40w3bsauce%2Fmetamask%40workspace%3Aconnectors%2Fmetamask"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
 "@w3bsauce/core@file:../../packages/core::locator=react-app%40workspace%3Aexamples%2Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=2049f8&locator=react-app%40workspace%3Aexamples%2Freact-app"
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=bc926e&locator=react-app%40workspace%3Aexamples%2Freact-app"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
 "@w3bsauce/core@file:../../packages/core::locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=2049f8&locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web"
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../../packages/core#../../packages/core::hash=bc926e&locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
-"@w3bsauce/core@file:../core::locator=%40w3bsauce%2Freact%40file%3A..%2F..%2Fpackages%2Freact%23..%2F..%2Fpackages%2Freact%3A%3Ahash%3Db1bdbd%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../core#../core::hash=2049f8&locator=%40w3bsauce%2Freact%40file%3A..%2F..%2Fpackages%2Freact%23..%2F..%2Fpackages%2Freact%3A%3Ahash%3Db1bdbd%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app"
+"@w3bsauce/core@file:../core::locator=%40w3bsauce%2Freact%40file%3A..%2F..%2Fpackages%2Freact%23..%2F..%2Fpackages%2Freact%3A%3Ahash%3D58c518%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app":
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../core#../core::hash=bc926e&locator=%40w3bsauce%2Freact%40file%3A..%2F..%2Fpackages%2Freact%23..%2F..%2Fpackages%2Freact%3A%3Ahash%3D58c518%26locator%3Dreact-app%2540workspace%253Aexamples%252Freact-app"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
 "@w3bsauce/core@file:../core::locator=%40w3bsauce%2Freact%40workspace%3Apackages%2Freact":
-  version: 0.0.1
-  resolution: "@w3bsauce/core@file:../core#../core::hash=2049f8&locator=%40w3bsauce%2Freact%40workspace%3Apackages%2Freact"
+  version: 0.0.2
+  resolution: "@w3bsauce/core@file:../core#../core::hash=bc926e&locator=%40w3bsauce%2Freact%40workspace%3Apackages%2Freact"
   dependencies:
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/2cdfa449a8dded8037ec3fc781ee4fa8a915bf19561821c862e3041e48d3b5f487833b80713e3d27feb27c378650d6690603ef8d9d14bf1b3469b3d3e1856cb5
+  checksum: 10c0/8c116690b6ce5777ab7e460abcbd698b9a003f2d35b688827852518af52bcc1967dfcd84e3bf4438485670d12dcbe38ceed26d42fecd59f5d337cc8eb25c5480
   languageName: node
   linkType: hard
 
@@ -2704,24 +2704,24 @@ __metadata:
   linkType: soft
 
 "@w3bsauce/metamask@file:../../connectors/metamask::locator=react-app%40workspace%3Aexamples%2Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/metamask@file:../../connectors/metamask#../../connectors/metamask::hash=485182&locator=react-app%40workspace%3Aexamples%2Freact-app"
+  version: 0.0.2
+  resolution: "@w3bsauce/metamask@file:../../connectors/metamask#../../connectors/metamask::hash=4c44b3&locator=react-app%40workspace%3Aexamples%2Freact-app"
   dependencies:
     "@w3bsauce/core": ../../packages/core
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/208f7879189f82cf1354fc1948ecb0c83bd1c413a62cc43ebcdfae6df3aae9065d3773194be43e1344d3402492cb71d1341140d895738a9e0a3c4a14a8d0efe3
+  checksum: 10c0/992efe79a921d13427c3b4c57ac074629bad5591fe441b881c1ff929d885a80d6424f8c26510ca0c4c2adc51eac194570c6eecad25b33f4e3571830b13e99f7e
   languageName: node
   linkType: hard
 
 "@w3bsauce/metamask@file:../../connectors/metamask::locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web":
-  version: 0.0.1
-  resolution: "@w3bsauce/metamask@file:../../connectors/metamask#../../connectors/metamask::hash=485182&locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web"
+  version: 0.0.2
+  resolution: "@w3bsauce/metamask@file:../../connectors/metamask#../../connectors/metamask::hash=4c44b3&locator=simpleWeb%40workspace%3Aexamples%2Fsimple-web"
   dependencies:
     "@w3bsauce/core": ../../packages/core
     ethers: "npm:^5.5.3"
     rxjs: "npm:^7.5.2"
-  checksum: 10c0/208f7879189f82cf1354fc1948ecb0c83bd1c413a62cc43ebcdfae6df3aae9065d3773194be43e1344d3402492cb71d1341140d895738a9e0a3c4a14a8d0efe3
+  checksum: 10c0/992efe79a921d13427c3b4c57ac074629bad5591fe441b881c1ff929d885a80d6424f8c26510ca0c4c2adc51eac194570c6eecad25b33f4e3571830b13e99f7e
   languageName: node
   linkType: hard
 
@@ -2736,12 +2736,12 @@ __metadata:
   linkType: soft
 
 "@w3bsauce/react@file:../../packages/react::locator=react-app%40workspace%3Aexamples%2Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/react@file:../../packages/react#../../packages/react::hash=b1bdbd&locator=react-app%40workspace%3Aexamples%2Freact-app"
+  version: 0.0.2
+  resolution: "@w3bsauce/react@file:../../packages/react#../../packages/react::hash=58c518&locator=react-app%40workspace%3Aexamples%2Freact-app"
   dependencies:
     "@w3bsauce/core": ../core
     react: "npm:^18.3.1"
-  checksum: 10c0/0d3624c142c58dea34f0e190bb018357859176d4bcd56703524dabfe97612247b0a1aaa3016cd768a8d59585246b40e401cfeeeff0d55ff5703b5597229c6e07
+  checksum: 10c0/02bfc8e8b0da316f894c31b3a98c2cdc7febf609ca72f335c4e21f4c09fe0c951bb99f61ccb58dcfc2d4d4244f32ebef8e64bfcb69119d0c7de603c531e0c661
   languageName: node
   linkType: hard
 
@@ -2756,12 +2756,12 @@ __metadata:
   linkType: soft
 
 "@w3bsauce/walletconnect@file:../../connectors/walletconnect::locator=react-app%40workspace%3Aexamples%2Freact-app":
-  version: 0.0.1
-  resolution: "@w3bsauce/walletconnect@file:../../connectors/walletconnect#../../connectors/walletconnect::hash=9e934c&locator=react-app%40workspace%3Aexamples%2Freact-app"
+  version: 0.0.2
+  resolution: "@w3bsauce/walletconnect@file:../../connectors/walletconnect#../../connectors/walletconnect::hash=b1660c&locator=react-app%40workspace%3Aexamples%2Freact-app"
   dependencies:
     "@walletconnect/web3-provider": "npm:^1.7.1"
     web3: "npm:^1.7.0"
-  checksum: 10c0/da8dabb6bf88670c4b10329208472ae42fc6f7f82bb2a548f802b5eba7fc48c9e0482a6a5f4505442c3e2b21216234ec353deb8b4f9000a7c6e95134979cfe07
+  checksum: 10c0/b773543ce408a5444fcdb64b9ea1d3a052f0ff5c83c08c8fca827bbcc07a48615013d8c216fb9be5989269906e552aadba5bd095c83cc30a83d7b57f7f1d683e
   languageName: node
   linkType: hard
 

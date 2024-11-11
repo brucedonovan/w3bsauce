@@ -1,6 +1,6 @@
 {
   "name": "@w3bsauce/metamask",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Metamask W3bConnector",
   "private": true,
   "main": "./bin/index.js",
