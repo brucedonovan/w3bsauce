@@ -1,5 +1,6 @@
 {
   "name": "@w3bsauce/react",
+  "version":"0.0.0",
   "main": "./bin/index.js",
   "repository": "https://github.com/w3bsauce/react.git",
   "author": "brucedonovan",

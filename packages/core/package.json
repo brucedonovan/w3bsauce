@@ -1,5 +1,6 @@
 {
   "name": "@w3bsauce/core",
+  "version":"0.0.0",
   "main": "./bin/index.js",
   "description": "",
   "repository": "https://github.com/w3bsauce/core.git",
