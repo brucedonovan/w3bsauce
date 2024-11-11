@@ -2,6 +2,7 @@
   "name": "@w3bsauce/metamask",
   "version": "0.0.1",
   "description": "Metamask W3bConnector",
+  "private": true,
   "main": "./bin/index.js",
   "dependencies": {
     "@w3bsauce/core": "../../packages/core",
