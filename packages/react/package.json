@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "npx tsc",
-    "watch": "npx tsc -w"
+    "compile": "npx tsc -b",
+    "watch": "npx tsc -b -w"
   },
   "dependencies": {
     "@w3bsauce/core": "../core",
