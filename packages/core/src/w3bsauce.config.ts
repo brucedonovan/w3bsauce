@@ -18,5 +18,4 @@ export default {
   defaultConnection: undefined,
   autoConnect:false,
 
-
 } as W3bConfig;

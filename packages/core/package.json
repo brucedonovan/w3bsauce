@@ -12,10 +12,14 @@
     "watch": "npx tsc -b -w"
   },
   "dependencies": {
-    "ethers": "^5.5.3",
     "rxjs": "^7.5.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.15"
+  },
+  "peerDependencies": {
+    "ethers": "*",
+    "viem": "*",
+    "web3": "*"
   }
 }

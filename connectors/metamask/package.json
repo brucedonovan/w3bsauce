@@ -5,9 +5,7 @@
   "private": true,
   "main": "./bin/index.js",
   "dependencies": {
-    "@w3bsauce/core": "../../packages/core",
-    "ethers": "^5.5.3",
-    "rxjs": "^7.5.2"
+    "@w3bsauce/core": "../../packages/core"
   },
   "scripts": {
     "compile": "npx tsc -b",
