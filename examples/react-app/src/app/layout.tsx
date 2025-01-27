@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from 'next/head'
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -28,14 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
+      <Head> {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
     // eslint-disable-next-line @next/next/no-sync-scripts
     <script
       data-recording-token="oxBPQSMtkczoYggcUZEKl7BSQH9HL52uazckvmze"
       data-is-production-environment="false"
       src="https://snippet.meticulous.ai/v1/meticulous.js"
     />
-  )}
+  )}</Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

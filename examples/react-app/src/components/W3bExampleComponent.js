@@ -6,7 +6,6 @@ import { W3bConnectorId } from "@w3bsauce/core/bin/types";
 import metamask from "@w3bsauce/metamask";
 
 import walletconnect from "@w3bsauce/walletconnect";
-
 import settings from "../w3bsauce.config";
 
 const W3bExampleComponent = () => {
@@ -15,7 +14,7 @@ const W3bExampleComponent = () => {
   // Example of using a w3bSauce config file.
   useEffect(() => {
     w3bFunctions.updateConfig(settings);
-  }, []); //only do this once on load
+  }, []); // only do this once on load
 
   useEffect(() => {
     w3bState.diagnostics ? console.log(w3bState.diagnostics): console.log('diagnostic ok') ;
